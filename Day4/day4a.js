@@ -7,7 +7,7 @@ const required = ['byr', 'iyr', 'eyr', 'hgt', 'hcl', 'ecl', 'pid']
 
 function validatePassports() {
     return passports.filter(passport => {
-        const fields = new Set(passport.split(/[\s\n]/).map(x => x.split(':')[0]))
+        const fields = new Set(passport.split(/[\s]/).map(x => x.split(':')[0]))
         return required.every(x => fields.has(x))
     }).length
 }

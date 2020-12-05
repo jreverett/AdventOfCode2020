@@ -30,7 +30,7 @@ function validatePassports() {
     }
 
     return passports.filter(passport => {
-        const fields = passport.split(/[\s\n]/).map(x => x.split(':'))
+        const fields = passport.split(/[\s]/).map(x => x.split(':'))
         const fieldMap = new Map(fields)
 
         // check required fields are present
